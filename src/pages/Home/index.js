@@ -1,9 +1,42 @@
-import React from "react";
+import { useEffect, useState } from 'react';
+import api from "../../services/api";
+import { Link } from 'react-router-dom';
+import './home.css';
 
 function Home() {
+    const [filmes, setFilmes] = useState([]);
+
+    useEffect(() => {
+
+        async function loadFilme(){
+            const response = await api.get("movie/now_playing", {
+                params: {
+                    api_key: "75eddc206ffda5dd327101183d4e6b2f",
+                    language: "pt-BR",
+                    page: 1,
+                }
+            })
+
+            setFilmes(response.data.results.slice(0, 20))
+        }
+
+        loadFilme();
+
+    }, [])
+
     return(
-        <div>
-            <h1>BEM VINDO A HOME</h1>
+        <div className="conatiner">
+            <div className="lista-filmes">
+                {filmes.map((filme) => {
+                    return(
+                        <articles key={filme.id}>
+                            <strong>{filme.title}</strong>
+                            <img src={`https://image.tmdb.org/t/p/original${filme.poster_path}`} alt={filme.title} />
+                            <Link to={`/filme${filme.id}`}>Acessar</Link>
+                        </articles>
+                    )
+                })}
+            </div>
         </div>
     )
 }
