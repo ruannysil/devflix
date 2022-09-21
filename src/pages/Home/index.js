@@ -5,6 +5,7 @@ import './home.css';
 
 function Home() {
     const [filmes, setFilmes] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
 
@@ -17,23 +18,32 @@ function Home() {
                 }
             })
 
-            setFilmes(response.data.results.slice(0, 20))
+            setFilmes(response.data.results.slice(0, 10))
+            setLoading(false);
         }
 
         loadFilme();
 
     }, [])
 
+    if(loading) {
+        return (
+            <div className='loading'>
+                <h2>Carregando filme...</h2>
+            </div>
+        )
+    }
+
     return(
         <div className="conatiner">
             <div className="lista-filmes">
                 {filmes.map((filme) => {
                     return(
-                        <articles key={filme.id}>
+                        <article key={filme.id}>
                             <strong>{filme.title}</strong>
                             <img src={`https://image.tmdb.org/t/p/original${filme.poster_path}`} alt={filme.title} />
-                            <Link to={`/filme${filme.id}`}>Acessar</Link>
-                        </articles>
+                            <Link to={`/filme/${filme.id}`}>Acessar</Link>
+                        </article>
                     )
                 })}
             </div>
