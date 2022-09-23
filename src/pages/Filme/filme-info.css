@@ -143,5 +143,8 @@
     .filme-info span {
         font-size: 12px;
     }
-    
+    .area-buttons button {
+        font-size: 17px;
+        padding: 6px;
+    }
 }
