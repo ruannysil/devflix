@@ -41,9 +41,13 @@
 }
 
 .area-buttons button:hover {
-    background: brown;
+    background: #a52a2a;
     color: #fff;
 }
+
+.area-buttons .btn-green:hover {
+    background: #008000;
+} 
 
 .area-buttons a {
     text-decoration: none;
@@ -53,4 +57,83 @@
 
 .area-buttons a:hover {
     color: #fff;
+}
+
+@media screen and (max-width: 2560px) {
+    
+    .filme-info h1 {
+        margin: 14px 0;
+    }
+    
+    .filme-info img {
+        border-radius: 8px;
+        max-width: 100%;
+        max-height: 100%;
+    }
+    
+    .filme-info h3 {
+        margin-top: 14px;
+        font-size: 24px;
+    }
+    
+    .filme-info span {
+        margin: 15px 0;
+        font-size: 24px;
+    }
+
+    .filme-info strong {
+        font-size: 22px;
+    }
+    
+    .area-buttons button {
+        margin-right: 12px;
+        margin-top: 14px;
+        margin-left: 0;
+        font-size: 20px;
+        border: 0;
+        outline: none;
+        padding: 19px 25px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+}
+
+
+@media screen and (max-width: 1440px) {
+    
+    .filme-info img {
+        border-radius: 8px;
+        width: 800px;
+        max-width: 100%;
+        max-height: 340px;
+    }
+    
+    .filme-info h3 {
+        margin-top: 14px;
+        font-size: 21px;
+    }
+    
+    .filme-info span {
+        margin: 8px 0;
+        font-size: 16px;
+    }
+    
+    .filme-info strong {
+        font-size: 14px;
+    }
+
+    .area-buttons button {
+        margin-right: 12px;
+        margin-top: 14px;
+        margin-left: 0;
+        font-size: 20px;
+        border: 0;
+        outline: none;
+        padding: 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+    
 }

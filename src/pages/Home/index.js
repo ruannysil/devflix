@@ -10,7 +10,7 @@ function Home() {
     useEffect(() => {
 
         async function loadFilme(){
-            const response = await api.get("movie/now_playing", {
+            const response = await api.get( "movie/popular", {
                 params: {
                     api_key: "75eddc206ffda5dd327101183d4e6b2f",
                     language: "pt-BR",
@@ -18,7 +18,8 @@ function Home() {
                 }
             })
 
-            setFilmes(response.data.results.slice(0, 10))
+
+            setFilmes(response.data.results.slice(0, 20))
             setLoading(false);
         }
 
