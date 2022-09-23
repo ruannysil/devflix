@@ -137,3 +137,11 @@
     }
     
 }
+
+@media screen and (max-width: 320px) {
+    
+    .filme-info span {
+        font-size: 12px;
+    }
+    
+}
