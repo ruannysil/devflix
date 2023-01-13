@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <img alt="License" src="https://user-images.githubusercontent.com/84647446/212435190-0b934dbe-4a7b-4d67-9873-8a90d508a761.jpg" width="500px">
+  <img alt="License" src="https://user-images.githubusercontent.com/84647446/212435190-0b934dbe-4a7b-4d67-9873-8a90d508a761.jpg" width="700px">
 </p>
 
 <br>
